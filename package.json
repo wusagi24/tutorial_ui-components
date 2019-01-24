@@ -1,6 +1,7 @@
 {
   "name": "ui-components",
   "version": "1.0.0",
+  "engines": { "node": "8.5.0" },
   "main": "src/client.js",
   "author": "Yusuke Goto",
   "license": "MIT",
