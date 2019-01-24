@@ -8,6 +8,15 @@ const Heading = props => (
   />
 );
 
+export const HeadingUnderlined = props => (
+  <HeadingContainer
+    presenter={
+      presenterProps => <HeadingUnderlinedPresenter { ...presenterProps } />
+    }
+    { ...props }
+  />
+);
+
 export const HeadingContainer = ({
   presenter,
   level = 2,
@@ -30,7 +39,28 @@ export const HeadingPresenter = ({
   ...props,
 }) => (
   <Tag
-    className={[ styles.h, styles[`h${ visualLevel }`], className ].join(' ')}
+    className={[
+      styles.h,
+      styles[`h${ visualLevel }`],
+      className,
+    ].join(' ')}
+    { ...props }
+  />
+);
+
+export const HeadingUnderlinedPresenter = ({
+  tag: Tag,
+  visualLevel,
+  className,
+  ...props,
+}) => (
+  <Tag
+    className={[
+      styles.h,
+      styles.underlined,
+      styles[`h${ visualLevel }`],
+      className,
+    ].join(' ')}
     { ...props }
   />
 );
