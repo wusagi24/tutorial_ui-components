@@ -8,6 +8,13 @@ export const TrashCanIcon = props => (
   />
 );
 
+export const ChevronRightIcon = props => (
+  <IconContainer
+    presenter={ presenterProps => <ChevronRightIconPresenter { ...presenterProps } /> }
+    { ...props }
+  />
+);
+
 export const IconContainer = ({
   presenter,
   onClick,
@@ -24,13 +31,25 @@ export const TrashCanIconPresenter = ({
   width = 20,
   ...props,
 }) => (
-    <img
-      src="/icons/trash-can.svg"
-      alt=""
-      height={ height }
-      width={ width }
-      className={ className }
-      onClick={ onClick }
-      { ...props }
-    />
-  );
+  <img
+    src="/icons/trash-can.svg"
+    alt=""
+    height={ height }
+    width={ width }
+    { ...props }
+  />
+);
+
+export const ChevronRightIconPresenter = ({
+  height = 20,
+  width = 20,
+  ...props,
+}) => (
+  <img
+    src="/icons/chevron-right.svg"
+    alt=""
+    height={ height }
+    width={ width }
+    { ...props }
+  />
+);
