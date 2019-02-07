@@ -6,7 +6,34 @@ import { InfoTxt } from '../../atoms/Txt/index';
 import Time from '../../atoms/Time/index';
 import DeleteButton from '../../molecules/DeleteButton/index';
 
-const Notification = ({
+const Notification = props => (
+  <NotificationContainer
+    presenter={ presenterProps => <NotificationPresenter { ...presenterProps } /> }
+    { ...props }
+  />
+);
+
+export class NotificationContainer extends React.Component {
+  constructor() {
+    super();
+    this.onClickDelete = ::this.onClickDelete;
+  }
+
+  onClickDelete(...args) {
+    const { onClickDelete, program } = this.props;
+    onClickDelete(...args, program);
+  }
+
+  render() {
+    const { presenter, onClickDelete: propsOnClickDelete, ...props } = this.props;
+    const onClickDelete = propsOnClickDelete ? this.onClickDelete : null;
+    const presenterProps = { onClickDelete, ...props };
+
+    return presenter(presenterProps);
+  }
+}
+
+const NotificationPresenter = ({
   program,
   className,
   onClickDelete,
