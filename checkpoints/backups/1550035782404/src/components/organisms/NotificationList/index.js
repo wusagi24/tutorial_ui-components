@@ -1,6 +1,8 @@
 import React from 'react';
+
 import styles from './styles.css';
-import Notification from '../Notification/index.js';
+
+import Notification from '../Notification/index';
 
 const NotificationList = ({
   programs,
@@ -18,4 +20,5 @@ const NotificationList = ({
     )) }
   </div>
 );
+
 export default NotificationList;

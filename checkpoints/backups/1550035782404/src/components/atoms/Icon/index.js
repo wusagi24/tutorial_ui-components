@@ -1,5 +1,17 @@
 import React from 'react';
+
 import styles from './styles.css';
+
+export const IconContainer = ({
+  presenter,
+  onClick,
+  className = '',
+  ...props,
+}) => {
+  if (onClick) className += ` ${ styles.clickable }`;
+
+  return presenter({ onClick, className, ...props });
+};
 
 export const IconPresenter = ({
   iconName,
@@ -15,15 +27,6 @@ export const IconPresenter = ({
     { ...props }
   />
 );
-export const IconContainer = ({
-  presenter,
-  onClick,
-  className = '',
-  ...props,
-}) => {
-  if (onClick) className += ` ${ styles.clickable }`;
-  return presenter({ onClick, className, ...props });
-};
 
 export const iconFactory = iconName => props => (
   <IconContainer
