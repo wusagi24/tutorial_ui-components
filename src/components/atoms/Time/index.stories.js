@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Time from './index';
 
 export default stories => stories

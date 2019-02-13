@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Txt, { InfoTxt, WarningTxt } from './index';
 
 export default stories => stories

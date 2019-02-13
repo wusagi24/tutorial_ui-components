@@ -1,10 +1,11 @@
 import React from 'react';
+
 import Heading, { HeadingUnderlined } from './index';
 
 export default stories => stories
   .add(
     'デフォルト',
-    () => <Heading>見出し</Heading>
+    () => <Heading>見出し</Heading>,
   )
   .add(
     'レベル１',
@@ -14,7 +15,7 @@ export default stories => stories
       >
         見出しレベル１
       </Heading>
-    )
+    ),
   )
   .add(
     'レベル１、見た目２',
@@ -25,11 +26,11 @@ export default stories => stories
       >
         見出しレベル１、見た目２
       </Heading>
-    )
+    ),
   )
   .add(
     '下線付き',
-    () => <HeadingUnderlined>下線付き</HeadingUnderlined>
+    () => <HeadingUnderlined>下線付き</HeadingUnderlined>,
   )
   .add(
     '下線付き、レベル１',
@@ -37,9 +38,9 @@ export default stories => stories
       <HeadingUnderlined
         level={ 1 }
       >
-      下線付き、見出しレベル１
+        下線付き、見出しレベル１
       </HeadingUnderlined>
-    )
+    ),
   )
   .add(
     '下線付き、レベル１、見た目２',
@@ -50,6 +51,6 @@ export default stories => stories
       >
         下線付き、見出しレベル１、見た目２
       </HeadingUnderlined>
-    )
+    ),
   );
 

@@ -1,9 +1,12 @@
 import React from 'react';
+
 import styles from './style.css';
 
 const Heading = props => (
   <HeadingContainer
-    presenter={ presenterProps => <HeadingPresenter { ...presenterProps } /> }
+    presenter={
+      presenterProps => <HeadingPresenter { ...presenterProps } />
+    }
     { ...props }
   />
 );

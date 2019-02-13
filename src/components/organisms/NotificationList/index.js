@@ -1,5 +1,7 @@
 import React from 'react';
+
 import styles from './styles.css';
+
 import Notification from '../Notification/index';
 
 const NotificationList = ({

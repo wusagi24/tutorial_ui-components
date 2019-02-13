@@ -1,5 +1,6 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
+
 import Notification from './index';
 
 const notification = {
@@ -15,6 +16,9 @@ export default stories => stories
   .add(
     'デフォルト',
     () => (
-      <Notification program={ notification } onClickDelete={ action('削除ボタンがクリックされました') } />
+      <Notification
+        program={ notification }
+        onClickDelete={ action('削除ボタンがクリックされました') }
+      />
     ),
   );
