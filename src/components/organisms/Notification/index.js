@@ -9,6 +9,8 @@ import Time from '../../atoms/Time/index.js';
 import DeleteButton from '../../molecules/DeleteButton/index.js';
 import MediaObjectLayout from '../../atoms/MediaObjectLayout/index';
 
+import { containPresenter } from '../../utils/HoC';
+
 export class NotificationContainer extends Component {
   constructor() {
     super();
@@ -56,11 +58,9 @@ export const NotificationPresenter = ({
   </MediaObjectLayout>
 );
 
-const Notification = props => (
-  <NotificationContainer
-    presenter={ presenterProps => <NotificationPresenter { ...presenterProps } /> }
-    { ...props }
-  />
+const Notification = containPresenter(
+  NotificationContainer,
+  NotificationPresenter,
 );
 
 export default Notification;
