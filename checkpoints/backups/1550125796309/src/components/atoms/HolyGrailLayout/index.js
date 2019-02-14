@@ -1,13 +1,19 @@
 import React from 'react';
-import styles from './styles.css';
-import { containPresenter } from '../../utils/HoC.js';
 
-const HolyGrailLayoutPresenter = ({ tag:Tag = 'div', parts, className, ...props }) => {
+import styles from './styles.css';
+
+const HolyGrailLayoutPresenter = ({
+  tag: Tag = 'div',
+  parts,
+  className,
+  ...props
+}) => {
   const { top, bottom, main, left, right } = parts;
+
   return (
     <Tag className={[ styles.root, className ].join(' ')}>
       { top }
-      <div className={styles.body}>
+      <div className={ styles.body }>
         { main }
         { left }
         { right }
@@ -19,6 +25,7 @@ const HolyGrailLayoutPresenter = ({ tag:Tag = 'div', parts, className, ...props 
 
 const HolyGrailLayoutContainer = ({ presenter, children, ...props }) => {
   const parts = mapParts(children);
+
   return presenter({ parts, ...props });
 };
 
@@ -38,10 +45,19 @@ function mapParts(elems) {
     parts[idx] = elem.props.children;
   });
   const [ top, bottom, main, left, right ] = parts;
+
   return { top, bottom, main, left, right };
 }
 
-const HolyGrailLayout = containPresenter(HolyGrailLayoutContainer, HolyGrailLayoutPresenter);
+const HolyGrailLayout = props => (
+  <HolyGrailLayoutContainer
+    presenter={
+      presenterProps => <HolyGrailLayoutPresenter { ...presenterProps } />
+    }
+    { ...props }
+  />
+);
+
 export default HolyGrailLayout;
 
 export const HolyGrailTop = () => <div>これはレンダリングされないもの</div>;
