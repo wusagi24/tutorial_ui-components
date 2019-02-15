@@ -1,7 +1,9 @@
 import React from 'react';
+
 import styles from './styles.css';
-import { PrimaryButton } from '../../atoms/Button/index.js';
-import TextBox from '../../atoms/TextBox/index.js';
+
+import { PrimaryButton } from '../../atoms/Button/index';
+import TextBox from '../../atoms/TextBox/index';
 
 const MailAuthForm = ({ onSubmit, ...props }) => (
   <form { ...props }>
