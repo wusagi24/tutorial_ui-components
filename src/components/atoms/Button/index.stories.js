@@ -1,22 +1,6 @@
 import React from 'react';
-import { action } from '@storybook/addon-actions';
-
-import { Button, PrimaryButton } from './index';
+import Button, { PrimaryButton } from './index.js';
 
 export default stories => stories
-  .add(
-    'デフォルト',
-    () => (
-      <Button onClick={ action('ボタンがクリックされました') }>
-        デフォルト
-      </Button>
-    ),
-  )
-  .add(
-    'プライマリ',
-    () => (
-      <PrimaryButton onClick={ action('プライマリボタンがクリックされました') }>
-        プライマリ
-      </PrimaryButton>
-    ),
-  );
+  .add('デフォルト', () => <Button>デフォルト</Button>)
+  .add('プライマリ', () => <PrimaryButton>プライマリ</PrimaryButton>);
