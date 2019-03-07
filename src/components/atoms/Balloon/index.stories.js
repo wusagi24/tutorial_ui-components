@@ -16,6 +16,10 @@ import { withStyle } from '../../utils/decorators.js';
 export default stories => stories
   .add('2文字ラベル', () => <Balloon>次へ</Balloon>)
   .add('4文字ラベル', () => <Balloon>削除する</Balloon>)
+  .add('10文字ラベル', () => <Balloon>削除したかったらする</Balloon>)
+  .add('20文字ラベル', () => <Balloon>削除したかったらするけど、どうしたいかな</Balloon>)
+  .add('30文字ラベル', () => <Balloon>削除したかったらするけど、どうしたいかな。嫌なら、やめようか</Balloon>)
+  .add('30文字ラベル改行', () => <Balloon>削除したかったらするけど、どうしたいかな。<br />嫌なら、やめようか</Balloon>)
   .add('絶対座標配置', () => <Balloon style={{ position: 'absolute', top: '200px', left: '200px' }}>左上から 200px に配置</Balloon>)
   .add('アイコンラベル', () => <Balloon><TrashCanIcon /></Balloon>)
   .add('絵文字', () => <Balloon>❌</Balloon>)
