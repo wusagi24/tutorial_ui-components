@@ -1,11 +1,18 @@
 import React from 'react';
-import styles from './styles.css';
-import StickyHeaderLayout from '../../atoms/StickyHeaderLayout/index.js';
-import PageHeader from '../../organisms/PageHeader/index.js';
-import Header from '../../organisms/Header/index.js';
-import NotificationList from '../../organisms/NotificationList/index.js';
 
-const NotificationListTemplate = ({ notifications, navigations, breadcrumb, onClickDeleteNotification }) => (
+import styles from './styles.css';
+
+import StickyHeaderLayout from '../../atoms/StickyHeaderLayout/index';
+import PageHeader from '../../organisms/PageHeader/index';
+import Header from '../../organisms/Header/index';
+import NotificationList from '../../organisms/NotificationList/index';
+
+const NotificationListTemplate = ({
+  notifications,
+  navigations,
+  breadcrumb,
+  onClickDeleteNotification,
+}) => (
   <StickyHeaderLayout>
     <Header navigations={ navigations } />
     <main className={ styles.main }>
