@@ -28,4 +28,10 @@ export default stories => stories
   .add('絵文字', () => <Balloon>❌</Balloon>)
   .add('バルーンチップ', () => withStyle({ marginTop: '50px' })(
     <p>ここに<BalloonTip label="注釈を記述するUI">バルーンチップ</BalloonTip>を表示</p>
+  ))
+  .add('長文中のバルーンチップ', () => (
+    <p style={{ padding: '50px', width: '300px' }}>
+      専門的なことを説明する文章の場合、文章中のある言葉が一般的に使われるものでない場合などに注釈を表示したいときがあります。
+      たとえば<BalloonTip label="注釈を記述するUI">バルーンチップ</BalloonTip>のようなUIを使うことでそれが可能です。
+    </p>
   ));
